@@ -92,4 +92,25 @@ if (app.Environment.IsDevelopment())
 app.UseAuthentication(); // <-- Önce kimliğini doğrula
 app.UseAuthorization();  // <-- Sonra yetkilerini kontrol etapp.MapControllers();
 app.MapControllers();
+
+// --- OTOMATİK MIGRATION BAŞLANGICI ---
+using (var scope = app.Services.CreateScope())
+{
+    var services = scope.ServiceProvider;
+    try
+    {
+        // Context ismini senin projene göre ayarla (Genelde ProjectDbContext veya Context)
+        var context = services.GetRequiredService<DataAccess.Concrete.EntityFramework.Context.IlacTakipContext>();
+
+        // Veritabanını oluştur veya güncellemeleri uygula
+        context.Database.Migrate();
+    }
+    catch (Exception ex)
+    {
+        var logger = services.GetRequiredService<ILogger<Program>>();
+        logger.LogError(ex, "Veritabanı tabloları oluşturulurken bir hata çıktı.");
+    }
+}
+// --- OTOMATİK MIGRATION BİTİŞİ ---
+
 app.Run();
