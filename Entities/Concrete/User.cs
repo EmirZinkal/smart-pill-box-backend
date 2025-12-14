@@ -9,6 +9,9 @@ namespace Entities.Concrete
         public string FullName { get; set; } = null!;
         public string Email { get; set; } = null!;
         public string PasswordHash { get; set; } = null!;
+
+        // YENİ EKLENEN: Kullanıcının tipi ("Patient" veya "Relative")
+        public string Role { get; set; } = null!;
         public DateTime? LastLoginAt { get; set; }
 
         // --- Navigation Properties (İlişkisel Özellikler) ---

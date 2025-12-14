@@ -125,3 +125,4 @@
 /Users/emirhanzinkal/Desktop/ilaçTakip-be/WebAPI/obj/Debug/net8.0/WebAPI.pdb
 /Users/emirhanzinkal/Desktop/ilaçTakip-be/WebAPI/obj/Debug/net8.0/WebAPI.genruntimeconfig.cache
 /Users/emirhanzinkal/Desktop/ilaçTakip-be/WebAPI/obj/Debug/net8.0/ref/WebAPI.dll
+/Users/emirhanzinkal/Desktop/ilaçTakip-be/WebAPI/obj/Debug/net8.0/WebAPI.sourcelink.json

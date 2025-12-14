@@ -13,3 +13,4 @@
 /Users/emirhanzinkal/Desktop/ilaçTakip-be/Entities/obj/Debug/net8.0/refint/Entities.dll
 /Users/emirhanzinkal/Desktop/ilaçTakip-be/Entities/obj/Debug/net8.0/Entities.pdb
 /Users/emirhanzinkal/Desktop/ilaçTakip-be/Entities/obj/Debug/net8.0/ref/Entities.dll
+/Users/emirhanzinkal/Desktop/ilaçTakip-be/Entities/obj/Debug/net8.0/Entities.sourcelink.json

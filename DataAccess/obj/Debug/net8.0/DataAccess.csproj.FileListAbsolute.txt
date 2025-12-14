@@ -17,3 +17,4 @@
 /Users/emirhanzinkal/Desktop/ilaçTakip-be/DataAccess/obj/Debug/net8.0/DataAccess.pdb
 /Users/emirhanzinkal/Desktop/ilaçTakip-be/DataAccess/obj/Debug/net8.0/DataAccess.genruntimeconfig.cache
 /Users/emirhanzinkal/Desktop/ilaçTakip-be/DataAccess/obj/Debug/net8.0/ref/DataAccess.dll
+/Users/emirhanzinkal/Desktop/ilaçTakip-be/DataAccess/obj/Debug/net8.0/DataAccess.sourcelink.json

@@ -17,3 +17,4 @@
 /Users/emirhanzinkal/Desktop/ilaçTakip-be/Business/obj/Debug/net8.0/refint/Business.dll
 /Users/emirhanzinkal/Desktop/ilaçTakip-be/Business/obj/Debug/net8.0/Business.pdb
 /Users/emirhanzinkal/Desktop/ilaçTakip-be/Business/obj/Debug/net8.0/ref/Business.dll
+/Users/emirhanzinkal/Desktop/ilaçTakip-be/Business/obj/Debug/net8.0/Business.sourcelink.json

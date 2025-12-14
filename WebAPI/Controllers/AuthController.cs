@@ -32,7 +32,14 @@ namespace WebAPI.Controllers
             var result = _authService.CreateAccessToken(userToLogin.Data);
             if (result.Success)
             {
-                return Ok(result); // Başarılı (Token ve mesaj döner)
+                // İŞTE BURASI: Flutter'a sadece token değil, ROLÜ de gönderiyoruz.
+                return Ok(new
+                {
+                    token = result.Data.Token,
+                    expiration = result.Data.Expiration,
+                    role = userToLogin.Data.Role, // "Patient" veya "Relative" dönecek
+                    userId = userToLogin.Data.Id
+                });// Başarılı (Token ve mesaj döner)
             }
 
             return BadRequest(result);
@@ -53,7 +60,14 @@ namespace WebAPI.Controllers
             var result = _authService.CreateAccessToken(registerResult.Data);
             if (result.Success)
             {
-                return Ok(result); // Başarılı (Token ve mesaj döner)
+                // İPUCU: Burada da rolü dönebiliriz ki kayıt sonrası hemen doğru sayfaya gitsin
+                return Ok(new
+                {
+                    token = result.Data.Token,
+                    expiration = result.Data.Expiration,
+                    role = registerResult.Data.Role, // Kayıt olan kişinin rolünü dönüyoruz
+                    userId = registerResult.Data.Id
+                }); // Başarılı (Token ve mesaj döner)
             }
 
             return BadRequest(result);
