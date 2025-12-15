@@ -72,6 +72,8 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
     });
 // ---------------------------------------------------------------
 
+// Arka Plan Servisini (Dedektif) Başlat
+builder.Services.AddHostedService<WebAPI.BackgroundServices.MedicationCheckService>();
 
 // --- 4. API Servislerini Ekle ---
 builder.Services.AddControllers();
