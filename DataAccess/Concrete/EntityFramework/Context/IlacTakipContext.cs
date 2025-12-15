@@ -19,6 +19,7 @@ namespace DataAccess.Concrete.EntityFramework.Context
         public DbSet<Medication> Medications { get; set; } = null!;
         public DbSet<Schedule> Schedules { get; set; } = null!;
         public DbSet<Intake> Intakes { get; set; } = null!;
+        public DbSet<Notification> Notifications { get; set; }
 
         /// Kullanıcılar arası (Hasta-Hasta Yakını) takip ilişkisi tablosu.
         public DbSet<CaregiverPatient> CaregiverPatients { get; set; } = null!;
