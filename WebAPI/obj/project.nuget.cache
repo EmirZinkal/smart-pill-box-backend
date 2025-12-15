@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "5V00HJ7AMeE=",
+  "dgSpecHash": "m9pVXoMsHQ4=",
   "success": true,
-  "projectFilePath": "/Users/emirhanzinkal/Desktop/ilaçTakip-be/WebAPI/WebAPI.csproj",
+  "projectFilePath": "/Users/emirhanzinkal/Desktop/Projeler/Smart pil box önceki versiyon/ilaçTakip-be/WebAPI/WebAPI.csproj",
   "expectedPackageFiles": [
     "/Users/emirhanzinkal/.nuget/packages/humanizer.core/2.14.1/humanizer.core.2.14.1.nupkg.sha512",
     "/Users/emirhanzinkal/.nuget/packages/microsoft.aspnetcore.authentication.jwtbearer/8.0.6/microsoft.aspnetcore.authentication.jwtbearer.8.0.6.nupkg.sha512",

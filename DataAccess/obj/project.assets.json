@@ -2600,11 +2600,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/emirhanzinkal/Desktop/ilaçTakip-be/DataAccess/DataAccess.csproj",
+      "projectUniqueName": "/Users/emirhanzinkal/Desktop/Projeler/Smart pil box önceki versiyon/ilaçTakip-be/DataAccess/DataAccess.csproj",
       "projectName": "DataAccess",
-      "projectPath": "/Users/emirhanzinkal/Desktop/ilaçTakip-be/DataAccess/DataAccess.csproj",
+      "projectPath": "/Users/emirhanzinkal/Desktop/Projeler/Smart pil box önceki versiyon/ilaçTakip-be/DataAccess/DataAccess.csproj",
       "packagesPath": "/Users/emirhanzinkal/.nuget/packages/",
-      "outputPath": "/Users/emirhanzinkal/Desktop/ilaçTakip-be/DataAccess/obj/",
+      "outputPath": "/Users/emirhanzinkal/Desktop/Projeler/Smart pil box önceki versiyon/ilaçTakip-be/DataAccess/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/Users/emirhanzinkal/.nuget/NuGet/NuGet.Config"
@@ -2619,11 +2619,11 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "/Users/emirhanzinkal/Desktop/ilaçTakip-be/Core/Core.csproj": {
-              "projectPath": "/Users/emirhanzinkal/Desktop/ilaçTakip-be/Core/Core.csproj"
+            "/Users/emirhanzinkal/Desktop/Projeler/Smart pil box önceki versiyon/ilaçTakip-be/Core/Core.csproj": {
+              "projectPath": "/Users/emirhanzinkal/Desktop/Projeler/Smart pil box önceki versiyon/ilaçTakip-be/Core/Core.csproj"
             },
-            "/Users/emirhanzinkal/Desktop/ilaçTakip-be/Entities/Entities.csproj": {
-              "projectPath": "/Users/emirhanzinkal/Desktop/ilaçTakip-be/Entities/Entities.csproj"
+            "/Users/emirhanzinkal/Desktop/Projeler/Smart pil box önceki versiyon/ilaçTakip-be/Entities/Entities.csproj": {
+              "projectPath": "/Users/emirhanzinkal/Desktop/Projeler/Smart pil box önceki versiyon/ilaçTakip-be/Entities/Entities.csproj"
             }
           }
         }

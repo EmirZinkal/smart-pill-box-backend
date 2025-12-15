@@ -18,3 +18,23 @@
 /Users/emirhanzinkal/Desktop/ilaçTakip-be/DataAccess/obj/Debug/net8.0/DataAccess.genruntimeconfig.cache
 /Users/emirhanzinkal/Desktop/ilaçTakip-be/DataAccess/obj/Debug/net8.0/ref/DataAccess.dll
 /Users/emirhanzinkal/Desktop/ilaçTakip-be/DataAccess/obj/Debug/net8.0/DataAccess.sourcelink.json
+/Users/emirhanzinkal/Desktop/Projeler/Smart pil box önceki versiyon/ilaçTakip-be/DataAccess/bin/Debug/net8.0/DataAccess.deps.json
+/Users/emirhanzinkal/Desktop/Projeler/Smart pil box önceki versiyon/ilaçTakip-be/DataAccess/bin/Debug/net8.0/DataAccess.runtimeconfig.json
+/Users/emirhanzinkal/Desktop/Projeler/Smart pil box önceki versiyon/ilaçTakip-be/DataAccess/bin/Debug/net8.0/DataAccess.dll
+/Users/emirhanzinkal/Desktop/Projeler/Smart pil box önceki versiyon/ilaçTakip-be/DataAccess/bin/Debug/net8.0/DataAccess.pdb
+/Users/emirhanzinkal/Desktop/Projeler/Smart pil box önceki versiyon/ilaçTakip-be/DataAccess/bin/Debug/net8.0/Core.dll
+/Users/emirhanzinkal/Desktop/Projeler/Smart pil box önceki versiyon/ilaçTakip-be/DataAccess/bin/Debug/net8.0/Entities.dll
+/Users/emirhanzinkal/Desktop/Projeler/Smart pil box önceki versiyon/ilaçTakip-be/DataAccess/bin/Debug/net8.0/Core.pdb
+/Users/emirhanzinkal/Desktop/Projeler/Smart pil box önceki versiyon/ilaçTakip-be/DataAccess/bin/Debug/net8.0/Entities.pdb
+/Users/emirhanzinkal/Desktop/Projeler/Smart pil box önceki versiyon/ilaçTakip-be/DataAccess/obj/Debug/net8.0/DataAccess.csproj.AssemblyReference.cache
+/Users/emirhanzinkal/Desktop/Projeler/Smart pil box önceki versiyon/ilaçTakip-be/DataAccess/obj/Debug/net8.0/DataAccess.GeneratedMSBuildEditorConfig.editorconfig
+/Users/emirhanzinkal/Desktop/Projeler/Smart pil box önceki versiyon/ilaçTakip-be/DataAccess/obj/Debug/net8.0/DataAccess.AssemblyInfoInputs.cache
+/Users/emirhanzinkal/Desktop/Projeler/Smart pil box önceki versiyon/ilaçTakip-be/DataAccess/obj/Debug/net8.0/DataAccess.AssemblyInfo.cs
+/Users/emirhanzinkal/Desktop/Projeler/Smart pil box önceki versiyon/ilaçTakip-be/DataAccess/obj/Debug/net8.0/DataAccess.csproj.CoreCompileInputs.cache
+/Users/emirhanzinkal/Desktop/Projeler/Smart pil box önceki versiyon/ilaçTakip-be/DataAccess/obj/Debug/net8.0/DataAccess.sourcelink.json
+/Users/emirhanzinkal/Desktop/Projeler/Smart pil box önceki versiyon/ilaçTakip-be/DataAccess/obj/Debug/net8.0/DataAccess.csproj.Up2Date
+/Users/emirhanzinkal/Desktop/Projeler/Smart pil box önceki versiyon/ilaçTakip-be/DataAccess/obj/Debug/net8.0/DataAccess.dll
+/Users/emirhanzinkal/Desktop/Projeler/Smart pil box önceki versiyon/ilaçTakip-be/DataAccess/obj/Debug/net8.0/refint/DataAccess.dll
+/Users/emirhanzinkal/Desktop/Projeler/Smart pil box önceki versiyon/ilaçTakip-be/DataAccess/obj/Debug/net8.0/DataAccess.pdb
+/Users/emirhanzinkal/Desktop/Projeler/Smart pil box önceki versiyon/ilaçTakip-be/DataAccess/obj/Debug/net8.0/DataAccess.genruntimeconfig.cache
+/Users/emirhanzinkal/Desktop/Projeler/Smart pil box önceki versiyon/ilaçTakip-be/DataAccess/obj/Debug/net8.0/ref/DataAccess.dll
