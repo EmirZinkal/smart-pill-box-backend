@@ -103,6 +103,9 @@ namespace DataAccess.Concrete.EntityFramework.Context
                       .HasConversion<string>()
                       .HasMaxLength(50);
             });
+            // Tablo adını açıkça belirtiyoruz.
+            // Eğer veritabanında tablo adın küçük harfse ("notifications") burayı değiştir!
+            modelBuilder.Entity<Notification>().ToTable("notifications");
         }
     }
 }
