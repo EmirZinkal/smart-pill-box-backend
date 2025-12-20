@@ -1034,11 +1034,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/emirhanzinkal/Desktop/Projeler/Smart pil box önceki versiyon/ilaçTakip-be/Business/Business.csproj",
+      "projectUniqueName": "/Users/emirhanzinkal/Desktop/Projeler/Smart pil box önceki versiyon/ilaçTakip-be/Business/Business.csproj",
       "projectName": "Business",
-      "projectPath": "/Users/emirhanzinkal/Desktop/Projeler/Smart pil box önceki versiyon/ilaçTakip-be/Business/Business.csproj",
+      "projectPath": "/Users/emirhanzinkal/Desktop/Projeler/Smart pil box önceki versiyon/ilaçTakip-be/Business/Business.csproj",
       "packagesPath": "/Users/emirhanzinkal/.nuget/packages/",
-      "outputPath": "/Users/emirhanzinkal/Desktop/Projeler/Smart pil box önceki versiyon/ilaçTakip-be/Business/obj/",
+      "outputPath": "/Users/emirhanzinkal/Desktop/Projeler/Smart pil box önceki versiyon/ilaçTakip-be/Business/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/Users/emirhanzinkal/.nuget/NuGet/NuGet.Config"
@@ -1053,14 +1053,14 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "/Users/emirhanzinkal/Desktop/Projeler/Smart pil box önceki versiyon/ilaçTakip-be/Core/Core.csproj": {
-              "projectPath": "/Users/emirhanzinkal/Desktop/Projeler/Smart pil box önceki versiyon/ilaçTakip-be/Core/Core.csproj"
+            "/Users/emirhanzinkal/Desktop/Projeler/Smart pil box önceki versiyon/ilaçTakip-be/Core/Core.csproj": {
+              "projectPath": "/Users/emirhanzinkal/Desktop/Projeler/Smart pil box önceki versiyon/ilaçTakip-be/Core/Core.csproj"
             },
-            "/Users/emirhanzinkal/Desktop/Projeler/Smart pil box önceki versiyon/ilaçTakip-be/DataAccess/DataAccess.csproj": {
-              "projectPath": "/Users/emirhanzinkal/Desktop/Projeler/Smart pil box önceki versiyon/ilaçTakip-be/DataAccess/DataAccess.csproj"
+            "/Users/emirhanzinkal/Desktop/Projeler/Smart pil box önceki versiyon/ilaçTakip-be/DataAccess/DataAccess.csproj": {
+              "projectPath": "/Users/emirhanzinkal/Desktop/Projeler/Smart pil box önceki versiyon/ilaçTakip-be/DataAccess/DataAccess.csproj"
             },
-            "/Users/emirhanzinkal/Desktop/Projeler/Smart pil box önceki versiyon/ilaçTakip-be/Entities/Entities.csproj": {
-              "projectPath": "/Users/emirhanzinkal/Desktop/Projeler/Smart pil box önceki versiyon/ilaçTakip-be/Entities/Entities.csproj"
+            "/Users/emirhanzinkal/Desktop/Projeler/Smart pil box önceki versiyon/ilaçTakip-be/Entities/Entities.csproj": {
+              "projectPath": "/Users/emirhanzinkal/Desktop/Projeler/Smart pil box önceki versiyon/ilaçTakip-be/Entities/Entities.csproj"
             }
           }
         }

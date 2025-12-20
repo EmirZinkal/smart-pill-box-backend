@@ -105,7 +105,7 @@ namespace DataAccess.Concrete.EntityFramework.Context
             });
             // Tablo adını açıkça belirtiyoruz.
             // Eğer veritabanında tablo adın küçük harfse ("notifications") burayı değiştir!
-            modelBuilder.Entity<Notification>().ToTable("notifications");
+            modelBuilder.Entity<Notification>().ToTable("Notifications");
         }
     }
 }
