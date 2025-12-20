@@ -1,5 +1,6 @@
 using Core.Utilities.Results;
 using Entities.Concrete;
+using System.Collections.Generic;
 
 namespace Business.Abstract
 {
@@ -16,5 +17,9 @@ namespace Business.Abstract
 
         /// Bir hastayı takip eden tüm HASTA YAKINI (User) listesini getirir.
         IDataResult<List<User>> GetCaregiversOfPatient(int patientId);
+
+        // 👇 EKLENEN YENİ METOT 👇
+        // Dedektif servisi, hastanın ID'sini verip "Bunun doktoru kim?" diye sorabilsin.
+        IDataResult<CaregiverPatient> GetCaregiverByPatientId(int patientId);
     }
 }

@@ -78,5 +78,21 @@ namespace Business.Concrete
             _caregiverPatientDal.Delete(existing);
             return new SuccessResult(Messages.UserUnfollowed);
         }
+
+        // 👇 EKLENEN YENİ METOT 👇
+        // Dedektif servisi, hastanın ID'sini verip "Bunun doktoru kim?" diye sorduğunda burası çalışacak.
+        public IDataResult<CaregiverPatient> GetCaregiverByPatientId(int patientId)
+        {
+            // Hastanın ID'sine göre takipçisini (doktorunu) bul
+            var result = _caregiverPatientDal.Get(c => c.PatientId == patientId);
+
+            if (result != null)
+            {
+                return new SuccessDataResult<CaregiverPatient>(result);
+            }
+
+            // Eğer doktoru yoksa hata dönmeyelim ama data null olsun, servis ona göre işlem yapar.
+            return new ErrorDataResult<CaregiverPatient>("Bu hastanın takipçisi bulunamadı.");
+        }
     }
 }
