@@ -45,11 +45,15 @@ namespace Business.Concrete
                 Email = userForRegisterDto.Email,
                 FullName = $"{userForRegisterDto.FirstName} {userForRegisterDto.LastName}",
                 PasswordHash = passwordHashString, // Base64 string olarak atandı
+
+                // 👇 KRİTİK EKLEME BURASI 👇
+                // DTO'dan gelen rolü alıp User nesnesine atıyoruz.
+                Role = userForRegisterDto.Role
             };
 
             // 5. Kullanıcıyı ekle
             _userService.Add(user);
-            
+
             // 6. Rol atama (UserOperationClaim)
             // Bu projede rol sistemi olmadığı için bu adım atlanıyor.
 
@@ -72,8 +76,8 @@ namespace Business.Concrete
 
             // 3. Gelen düz metin şifre ile veritabanındaki HASH'i doğrula
             var passwordMatch = HashingHelper.VerifyPasswordHash(
-                userForLoginDto.Password, 
-                storedHashBytes           
+                userForLoginDto.Password,
+                storedHashBytes
             );
 
             if (!passwordMatch)
@@ -98,7 +102,7 @@ namespace Business.Concrete
                 user.Email,
                 user.FullName
             );
-            
+
             return new SuccessDataResult<AccessToken>(accessToken, "Token oluşturuldu.");
         }
 
