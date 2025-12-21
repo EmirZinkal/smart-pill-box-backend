@@ -19,7 +19,26 @@ namespace Business.Concrete
 
         public IResult FollowPatient(int caregiverId, int patientId)
         {
-            // Kural: Aynı ilişki tekrar eklenemez.
+            // 1. KURAL: Kişi kendini takip edemez.
+            if (caregiverId == patientId)
+            {
+                return new ErrorResult("Kendinizi hasta olarak ekleyemezsiniz.");
+            }
+
+            // 2. KURAL: Doktorlar/Bakıcılar hasta olarak eklenemez.
+            var targetUser = _userDal.Get(u => u.Id == patientId);
+            if (targetUser == null)
+            {
+                return new ErrorResult("Eklemeye çalıştığınız kullanıcı bulunamadı.");
+            }
+
+            // Eğer eklenen kişinin rolü 'Doctor' veya 'Caregiver' ise engelle.
+            if (targetUser.Role == "Doctor" || targetUser.Role == "Caregiver")
+            {
+                return new ErrorResult("Doktorlar veya Bakıcılar hasta listesine eklenemez.");
+            }
+
+            // 3. KURAL: Aynı ilişki tekrar eklenemez.
             var existing = _caregiverPatientDal.Get(cp =>
                 cp.CaregiverId == caregiverId && cp.PatientId == patientId);
 
