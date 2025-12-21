@@ -23,7 +23,7 @@ namespace WebAPI.BackgroundServices
 
         protected override async Task ExecuteAsync(CancellationToken stoppingToken)
         {
-            _logger.LogInformation("💊 İlaç Takip ve Doktor Bildirim Sistemi Başlatıldı...");
+            _logger.LogInformation("💊 İlaç Takip ve Doktor Bildirim Sistemi (TR Saati) Başlatıldı...");
 
             while (!stoppingToken.IsCancellationRequested)
             {
@@ -31,51 +31,46 @@ namespace WebAPI.BackgroundServices
                 {
                     using (var scope = _scopeFactory.CreateScope())
                     {
-                        // Gerekli servisleri çağırıyoruz
                         var medicationService = scope.ServiceProvider.GetRequiredService<IMedicationService>();
                         var notificationService = scope.ServiceProvider.GetRequiredService<INotificationService>();
                         var caregiverService = scope.ServiceProvider.GetRequiredService<ICaregiverPatientService>();
-                        var userService = scope.ServiceProvider.GetRequiredService<IUserService>(); // Hasta ismini bulmak için
+                        var userService = scope.ServiceProvider.GetRequiredService<IUserService>();
 
                         var allMedications = medicationService.GetAll().Data;
-                        var now = DateTime.UtcNow; // UTC Zamanı
+
+                        // 🔴 DÜZELTME: Sunucu saati (UTC) yerine TÜRKİYE saati (UTC+3) baz alınıyor.
+                        var nowTr = DateTime.UtcNow.AddHours(3);
 
                         if (allMedications != null)
                         {
                             foreach (var med in allMedications)
                             {
-                                // İlaç saatlerini ayır (Örn: "09:00, 21:00")
                                 var doseTimes = med.Dose.Split(',');
 
                                 foreach (var timeStr in doseTimes)
                                 {
                                     if (TimeSpan.TryParse(timeStr.Trim(), out TimeSpan scheduledTime))
                                     {
-                                        DateTime todayUtc = DateTime.UtcNow.Date;
-                                        DateTime scheduleDateTime = todayUtc.Add(scheduledTime);
+                                        // Hesaplamaları bugünün TÜRKİYE tarihine göre yapıyoruz
+                                        DateTime todayTr = nowTr.Date;
+                                        DateTime scheduleDateTime = todayTr.Add(scheduledTime);
 
-                                        // KONTROL ZAMANI:
-                                        // İlaç saati 15 dakika geçtiyse VE 2 saat dolmadıysa kontrol et.
-                                        if (now > scheduleDateTime.AddMinutes(15) && now < scheduleDateTime.AddHours(2))
+                                        // KONTROL: Türkiye saatiyle 15 dk geçti mi?
+                                        if (nowTr > scheduleDateTime.AddMinutes(15) && nowTr < scheduleDateTime.AddHours(2))
                                         {
-                                            // Slot numarasını güvenli çevir (Hata önleyici)
                                             int.TryParse(med.Notes, out int slotNumber);
-
-                                            // Bu hasta için bugünkü bildirimleri çek
                                             var existingNotifications = notificationService.GetByPatient(med.UserId).Data;
 
-                                            // Bu ilaç, bu saat için DAHA ÖNCE İŞLEM GÖRDÜ MÜ?
-                                            // Hem "Taken" (Alındı) hem "Missed" (Atlandı) kayıtlarına bakıyoruz.
+                                            // Kontrol ederken veritabanındaki UTC kayıtlarına bakmaya devam ediyoruz
                                             bool isProcessed = existingNotifications.Any(n =>
-                                                n.CreatedAt.Date == todayUtc && // Bugün mü?
-                                                n.Message.Contains(timeStr.Trim()) && // Bu saat için mi?
-                                                (n.Slot == slotNumber || n.Message.Contains(med.Name)) // Doğru ilaç mı?
+                                                n.CreatedAt.Date == DateTime.UtcNow.Date && // Veritabanı UTC tutar
+                                                n.Message.Contains(timeStr.Trim()) &&
+                                                (n.Slot == slotNumber || n.Message.Contains(med.Name))
                                             );
 
-                                            // Eğer ne alındı ne de atlandı kaydı yoksa -> DEMEK Kİ UNUTULDU!
                                             if (!isProcessed)
                                             {
-                                                // 1. HASTAYA BİLDİRİM GÖNDER
+                                                // 1. HASTAYA BİLDİRİM
                                                 var patientNotif = new Notification
                                                 {
                                                     PatientId = med.UserId,
@@ -86,24 +81,22 @@ namespace WebAPI.BackgroundServices
                                                     CreatedAt = DateTime.UtcNow
                                                 };
                                                 notificationService.Add(patientNotif);
-                                                _logger.LogWarning($"⚠️ Hasta {med.UserId} için atlanan ilaç eklendi: {med.Name}");
+                                                _logger.LogWarning($"⚠️ Hasta {med.UserId} için atlanan ilaç eklendi: {med.Name} (Saat: {timeStr})");
 
-                                                // 2. DOKTORA (HASTA YAKININA) BİLDİRİM GÖNDER
+                                                // 2. DOKTORA BİLDİRİM
                                                 var relationResult = caregiverService.GetCaregiverByPatientId(med.UserId);
 
                                                 if (relationResult.Success && relationResult.Data != null)
                                                 {
                                                     var doctorId = relationResult.Data.CaregiverId;
-
-                                                    // Hastanın ismini bulalım ki doktor kimin unuttuğunu anlasın
                                                     var patientUser = userService.GetById(med.UserId);
                                                     string patientName = patientUser != null ? patientUser.Data.FullName : $"ID:{med.UserId}";
 
                                                     var doctorNotif = new Notification
                                                     {
-                                                        PatientId = doctorId, // Doktora gidiyor
+                                                        PatientId = doctorId,
                                                         Slot = 0,
-                                                        Status = "Alert", // Acil Uyarı
+                                                        Status = "Alert",
                                                         Message = $"UYARI: Hastanız {patientName}, {med.Name} ilacını saat {timeStr.Trim()}'de almadı!",
                                                         IsRead = false,
                                                         CreatedAt = DateTime.UtcNow
@@ -124,7 +117,6 @@ namespace WebAPI.BackgroundServices
                     _logger.LogError(ex, "İlaç kontrol döngüsünde kritik hata.");
                 }
 
-                // Her 1 dakikada bir kontrol et
                 await Task.Delay(TimeSpan.FromMinutes(1), stoppingToken);
             }
         }
